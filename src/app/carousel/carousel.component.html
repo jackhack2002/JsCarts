@@ -1,0 +1,30 @@
+<div class="m-1">
+
+  
+<div class="absolute flex w-full h-fit sm:h-80">
+  <div class="flex justify-between w-full mx-3 my-auto">
+      <button class="text-white" (click)="prevImage()">
+          <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+        </svg>
+      </button>
+      <button class="text-white" (click)="nextImage()">
+          <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+        </svg>
+      </button>
+  </div>
+    
+          
+</div>
+
+<div id="slider" class="w-full mx-px my-px bg-blue-600 h-fit sm:h-80">
+  <img class="w-full h-72 sm:h-full" src="../../assets/banner/banner1.jpg" [class.hidden]="currentImageIndex !== 0">
+  <img class="hidden w-full h-72 sm:h-full" src="../../assets/banner/banner2.jpg" [class.hidden]="currentImageIndex !== 1">
+  <img class="hidden w-full h-72 sm:h-full" src="../../assets/banner/banner3.jpg" [class.hidden]="currentImageIndex !== 2">
+  <img class="hidden w-full h-72 sm:h-full" src="../../assets/banner/banner4.jpg" [class.hidden]="currentImageIndex !== 3">
+  <img class="hidden w-full h-72 sm:h-full" src="../../assets/banner/banner5.jpg" [class.hidden]="currentImageIndex !== 4">
+</div> 
+
+
+</div>

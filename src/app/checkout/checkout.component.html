@@ -1,0 +1,99 @@
+<div class="bg-slate-600 w-full min-h-screen bg-opacity-70">
+
+
+    <div>
+        <div class="text-center text-3xl pt-2 font-bold">
+            <h1 class="text-5xl">CHECKOUT</h1>
+        </div>
+
+        <div class="flex h-fit p-10">
+            <div class="w-full flex flex-wrap items-start justify-between ">
+                <div class="w-full md:w-1/2 h-fit ">
+                    <div class="p-3 w-full">
+                        <h2 class="text-xl font-semibold">Order Summary</h2>
+                        <div>
+                            <div class=" m-5">
+                                <div class="bg-white  w-fit rounded-lg shadow-md p-6">
+                                    <h2 class="text-lg font-semibold mb-4">Summary</h2>
+                                    <div class="flex justify-between mb-2">
+                                        <span>Subtotal</span>
+                                        <span>{{ (overallTotal - 20) / 1.1 | currency: 'INR' }}</span>
+                                    </div>
+                                    <div class="flex justify-between mb-2">
+                                        <span>Taxes (10%)</span>
+                                        <span>{{ (overallTotal - 20) / 11 | currency: 'INR' }}</span>
+                                    </div>
+                                    <div class="flex justify-between mb-2">
+                                        <span>Shipping Charges</span>
+                                        <span>{{ 20 | currency: 'INR' }}</span>
+                                    </div>
+                                    <hr class="my-2">
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-semibold">Total</span>
+                                        <span class="font-semibold">{{ overallTotal | currency: 'INR' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 h-fit ">
+                    <div class="w-full p-3">
+                        <h2 class="text-xl font-semibold">Shipping Information</h2>
+                        <form class="m-3 flex w-full">
+                            <div class="w-full">
+                                <div><label class="mt-3 ml-2 text-xl w-full font-medium" for="name">Name :</label>
+                                    <input class="ml-10 mt-3 w-fit border-2 rounded-lg border-black" type="text" id="name" name="name"
+                                        required>
+                                </div>
+                                <div><label class="mt-3 ml-2 text-xl font-medium" for="address">Address :</label>
+                                    <textarea class="ml-5 mt-3 w-fit border-2 rounded-lg border-black" type="text" id="address"
+                                        name="address"  rows="1" required></textarea>
+                                </div>
+                                <div><label class="mt-3 ml-2 text-xl font-medium" for="city">City :</label>
+                                    <input class="ml-14 mt-3 w-fit border-2 rounded-lg border-black" type="text" id="city" name="city"
+                                        required>
+                                </div>
+                                <div><label class="mt-3 ml-2 text-xl font-medium" for="pincode">PIN Code :</label>
+                                    <input class="ml-3 mt-3 w-fit border-2 rounded-lg border-black" type="text" id="pincode"
+                                        name="pincode" required>
+                                </div>
+                                <div><label class="mt-3 ml-2 text-xl font-medium" for="email">Email :</label>
+                                    <input class="ml-10 mt-3 w-fit border-2 rounded-lg border-black" type="email" id="email"
+                                        name="email" required>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="w-full h-fit ">
+                    <form class="p-4 h-48 w-80 bg-green-700 m-2 rounded-xl border-2 border-black">
+                            <div class="mt-2 w-full">
+                                <label for="cardnumber">Card Number :</label>
+                                <input class="ml-2 w-40 border-2 border-black rounded-lg" type="number" id="cardnumber"
+                                    name="cardnumber" maxlength="16" required>
+                            </div>
+                            <div class="mt-2">
+                                <label for="expdate">Expiration Date :</label>
+                                <input class="w-8 ml-2 border-2 border-black rounded-lg" type="number" id="expdate"
+                                    name="expmonth" maxlength="2" required> /
+                                <input class="w-16 ml-2 border-2 border-black rounded-lg" type="number" name="expyear"
+                                    id="expdate" maxlength="4" required>
+                            </div>
+                            <div class="mt-2">
+                                <label for="cvv">CVV :</label>
+                                <input class="ml-2 w-16 border-2 border-black rounded-lg" type="text" id="cvv" name="cvv"
+                                    required>
+                            </div>
+                    </form>
+                    <div class="flex ml-5 my-12 w-full">
+                        <h4 class="font-semibold">Total :</h4>
+                        <h4 class="font-semibold ml-3">{{ overallTotal | currency: 'INR' }}</h4>
+                        <button class="ml-10 bg-blue-500 text-white px-4 py-3 rounded-lg w-40 h-12"
+                            (click)="placeOrder()">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

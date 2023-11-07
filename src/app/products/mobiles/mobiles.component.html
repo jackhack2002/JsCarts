@@ -1,0 +1,22 @@
+
+
+<div class="w-full bg-slate-400 h-fit m-1">
+    <div class="flex justify-center w-full h-10 p-6 mx-3 my-auto">
+        <h2 class="font-serif text-3xl">MOBILES</h2>
+    </div>
+    <div class="flex flex-wrap items-stretch justify-start w-full gap-5 p-5 mx-auto h-fit">
+        <div *ngFor="let product of mobiles">
+            <div class="p-3 bg-white rounded-2xl">
+                <img class="rounded-lg w-52 h-60" [src]="product.image" alt="{{ product.name }}">
+                <div class="mt-2 text-center">
+                    {{ product.name }}<br>
+                     {{ product.price | currency:'INR' }}<br>
+                    <button class="w-full h-8 text-gray-700 bg-blue-600 rounded-lg hover:text-blue-600 hover:bg-gray-700"(click)="addToCart(product)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

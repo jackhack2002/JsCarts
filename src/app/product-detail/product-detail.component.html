@@ -1,0 +1,17 @@
+
+
+
+<div class="flex w-full mt-5">
+    <div *ngFor="let product of products">
+        <div class="p-10">
+            <img [src]="product.image" alt="{{ product.name }}">
+        </div>
+        <div class="p-2 w-96 mt-12">
+            <h2>{{ product.name }}</h2>
+            
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque rem expedita aut quisquam odit dolore officiis quis laborum alias, quidem suscipit sint, ipsum rerum excepturi eius cum quia nihil dolor!
+            <p>Price: ₹{{ product.price }}</p>
+            <button class="w-56 mt-10 h-8 text-gray-70 0 bg-blue-600 rounded-lg hover:text-blue-600 hover:bg-gray-700">Add to Cart</button>
+        </div>
+    </div>
+</div>

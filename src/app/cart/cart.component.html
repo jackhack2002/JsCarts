@@ -1,0 +1,77 @@
+<div class="w-screen h-screen bg-gray-400 bg-opacity-50">
+    <div class="w-full bg-slate-400 h-fit">
+        <div *ngIf="cartItems.length > 0; else emptyCart">
+            <div class="flex justify-between w-full h-10 p-6 mx-3 my-auto">
+                <h2 class="font-serif text-3xl">Your Cart</h2>
+            </div>
+            <div class="flex items-start justify-start w-full">
+                <div class="flex flex-wrap items-start justify-start w-3/5 gap-5 p-5 mx-auto h-fit">
+                    <div *ngFor="let item of cartItems; let i = index">
+                        <div class="p-3 bg-white rounded-2xl">
+                            <img class="rounded-lg w-52 h-60" [src]="item.image" alt="{{item.name}}">
+                            <div class="mt-2 text-center">
+                                <h3>{{item.name}}</h3>
+                                <p>Price: {{item.totalPrice | currency :'INR'}}</p>
+                                <div class="flex justify-center items-center">
+                                    <button class="w-8 h-8 bg-blue-600 text-white rounded-xl"
+                                        (click)="decreaseQuantity(i)">-</button>
+                                    <span class="mx-2">{{item.quantity}}</span>
+                                    <button class="w-8 h-8 bg-blue-600 text-white rounded-xl"
+                                        (click)="increaseQuantity(i)">+</button>
+                                </div>
+                                <div class="mt-2">
+                                    <button
+                                        class="w-full h-8 text-white bg-blue-600 rounded-lg hover:text-blue-600 hover:bg-gray-700"
+                                        (click)="removeItemFromCart(item)">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/4 m-5">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Summary</h2>
+                        <div class="flex justify-between mb-2">
+                            <span>Subtotal</span>
+                            <span>{{ (overallTotal - 20) / 1.1 | currency: 'INR' }}</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Taxes (10%)</span>
+                            <span>{{ (overallTotal - 20) / 11 | currency: 'INR' }}</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Shipping Charges</span>
+                            <span>{{ 20 | currency: 'INR' }}</span>
+                        </div>
+                        <hr class="my-2">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold">Total</span>
+                            <span class="font-semibold">{{ overallTotal | currency: 'INR' }}</span>
+                        </div>
+                        <button class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full" (click)="Checkout()">Checkout</button>
+                        <button
+                            class="w-full h-8 mt-2 text-white bg-blue-600 rounded-lg hover:text-blue-600 hover:bg-gray-700"
+                            (click)="clearCart()">Clear Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<ng-template #emptyCart>
+    <div class="h-screen bg-slate-300">
+        <div class="p-10 text-center py-48 ">
+            <h1 class="font-bold text-3xl">Your cart is empty.</h1>
+            <div class="pt-10">
+                <a href="#" class="text-blue-700 text-xl" >Go to home page</a>
+            </div>
+        </div>
+    </div>
+</ng-template>

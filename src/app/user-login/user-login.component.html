@@ -1,0 +1,51 @@
+<div class="flex w-full h-screen">
+    <div class="mx-auto mt-20">
+        <div class="border-4 border-golden h-96 w-96 rounded-3xl ">
+            <div><img class="p-6 rounded-full" src="../../assets/img/navlogo.png"></div>
+
+            <div class="flex flex-col items-center justify-center mt-2">
+                <div class="mx-auto my-3">
+                    <label class="text-gray-800" for="email">Email :</label>
+                    <input class="ml-2 border-2 border-golden hover:border-amber-400 rounded-md" type="email" id="email"
+                        name="email" [(ngModel)]="email">
+                </div>
+
+
+
+                <div class="mx-auto my-3 flex flex-row">
+                    <label class="text-gray-800" for="password">Password :</label>
+                    <div class="flex flex-row ml-2 border-2 border-golden rounded-md">
+                        <div><input class="border-golden" [type]="changetype?'password':'text'" id="password" [(ngModel)]="password"></div>
+                        <div><svg *ngIf="viewIcon== true" (click)="showPassword()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          <svg *ngIf="viewIcon== false" (click)="showPassword()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                          </svg>
+                          
+                        </div>
+                    </div>
+                </div>
+
+             
+
+
+
+
+
+
+                <div class="flex justify-between w-full h-fit mt-2">
+                    <div class="mx-10 text-blue-600"><label class="cursor-pointer" for="passwordreset" (click)="ForgotPassword(email)">Forgot Password?</label></div>
+                    <div class="mx-10"><button type="button"
+                            class="px-4 py-2  text-sm font-medium text-center text-white rounded-lg bg-golden hover:bg-golden focus:ring-4 focus:outline-none focus:ring-amber-300"
+                            (click)="login(email,password)">LOGIN</button></div>
+                </div>
+            </div>
+            <div class="text-center w-full mt-4">
+                <button class="text-blue-600 bg-golden w-64 mx-5 rounded-lg font-bold py-1" (click)="register()">Create Account</button>
+            </div>
+
+        </div>
+    </div>
+</div>
