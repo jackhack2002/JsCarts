@@ -37,6 +37,9 @@ export class UserRegistrationComponent  {
   //   confirmPassword:""
   // }
 
+  changetype:boolean;
+  viewIcon:boolean;
+
   email: string;
   password: string;
 
@@ -45,6 +48,9 @@ export class UserRegistrationComponent  {
     private router: Router,
     private userinfo: UserInfoService
   ) {
+    this.changetype=true;
+    this.viewIcon=true;
+
     this.email = '';
     this.password = '';
   }
@@ -65,6 +71,10 @@ export class UserRegistrationComponent  {
     this.router.navigate(['/login'])
   }
 
+  showPassword(){
+    this.changetype = !this.changetype;
+    this.viewIcon = !this.viewIcon;
+  }
 
 
 }
