@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +22,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import {AngularFireAuthModule} from '@angular/fire/compat/auth'
-import {AngularFireStorage, AngularFireStorageModule} from '@angular/fire/compat/storage'
+import {AngularFireStorageModule} from '@angular/fire/compat/storage'
 import {AngularFireDatabaseModule} from '@angular/fire/compat/database'
 import { AngularFireModule } from '@angular/fire/compat';
 import { UserInfoService } from './services/user/user-info.service';
@@ -61,6 +61,7 @@ const firebaseConfig = {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule,
@@ -70,3 +71,7 @@ const firebaseConfig = {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+function provideFireStore(arg0: () => import("@firebase/firestore").Firestore): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+  throw new Error('Function not implemented.');
+}
+

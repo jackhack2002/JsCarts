@@ -1,1 +1,40 @@
-<p>profile works!</p>
+<div class="h-[100vh] flex w-full bg-gray-600 bg-opacity-30">
+    <div class="h-fit p-4 w-fit bg-white border-slate-700 rounded-3xl items-stretch justify-between mx-auto border-4 mt-28 ">
+        <div class="h-20 w-full flex mt-8 ">
+            <img for="profile_image" class="absolute h-28 w-28 rounded-full border-4 border-zinc-600 mx-auto "
+                src="../../assets/img/sample.png" alt="profile_image">
+                <input class="absolute h-28 w-28 rounded-full border-4 border-zinc-600 mx-auto " type="file" id="profile_image">
+        </div>
+        <div class="w-full  h-fit flex flex-row mt-5 p-5">
+            <form (ngSubmit)="onSubmit()" class="w-full  h-fit">
+                <!-- [formGroup]="profileForm" -->
+                <div class="w-full flex flex-row items-stretch justify-between">
+                    <h5 class="my-2 font-sans font-bold w-fit">FirstName :</h5><input type="text" [disabled]="isDisabled"
+                        class="mx-2 my-2 font-sans font-bold" value="{{firstName | uppercase}}"  >
+                </div>
+                <div class="w-full flex flex-row items-stretch justify-between">
+                    <h5 class="my-2 font-sans font-bold">LastName :</h5><input type="text" [disabled]="isDisabled"
+                        class="mx-2 my-2 font-sans font-bold" value="{{lastName | uppercase}}">
+                </div>
+                <div class="w-full flex flex-row items-stretch justify-between">
+                    <h5 class="my-2 font-sans font-bold">Email :</h5><input type="text" [disabled]="isDisabled"
+                        class="mx-2 my-2 font-sans font-bold" value="{{Email | lowercase}}">
+                </div>
+                <div class="w-full flex flex-row items-stretch justify-between">
+                    <h5 class="my-2 font-sans font-bold">PhoneNumber :</h5><input type="text" [disabled]="isDisabled"
+                        class="mx-2 my-2 font-sans font-bold" value="{{phoneNumber | uppercase}}">
+                </div>
+                <div class="w-full flex flex-row items-stretch justify-between">
+                    <h5 class="my-2 font-sans font-bold">Address :</h5><input type="text" [disabled]="isDisabled"
+                        class="mx-2 my-2 font-sans font-bold" value="{{Address | lowercase}}">
+                    </div>
+            </form>
+        </div>
+        <div class=" h-10 w-full flex items-stretch justify-between">
+            <button class="mx-auto py-2 px-2 bg-blue-500 rounded-lg font-semibold text-lg text-white" (click)="enableButton()">EDIT
+                PROFILE</button>
+            <button class="mx-auto py-2 px-2 bg-blue-500 rounded-lg font-semibold text-lg text-white cursor-not-allowed" [disabled]="true" >SAVE</button>
+        </div>
+    </div>
+    
+</div>
