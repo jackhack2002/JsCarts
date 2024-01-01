@@ -31,6 +31,7 @@ export class ProductListComponent {
   addToCart(product: Product): void {
     if (localStorage.getItem('IsAuthorized')) {
       this.cartService.addToCart(product);
+      alert("Item added to Cart..")
     } else {
       alert("Login to continue ...");
       this.router.navigate(['/login']);

@@ -7,42 +7,42 @@
                 <div class="flex flex-col items-center justify-center mt-2">
                     <div class="mx-auto my-2">
                         <label class="text-gray-800" for="firstname">First Name :</label>
-                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400" type="text"
+                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="text"
                             id="firstname" name="firstname" ngModel>
                     </div>
                     <div class="mx-auto my-2">
                         <label class="text-gray-800" for="lastname">Last Name :</label>
-                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400" type="text"
+                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="text"
                             id="lastname" name="lastname" ngModel>
                     </div>
                     <div class="mx-auto my-2">
                         <label class="text-gray-800" for="title">Select Title:</label>
-                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400" type="radio"
+                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="radio"
                             id="titleMr" name="title" ngModel value="Mr.">
                         <label for="titleMr">Mr.</label>
-                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400" type="radio"
+                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="radio"
                             id="titleMrs" name="title" ngModel value="Mrs.">
                         <label for="titleMrs">Mrs.</label>
-                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400" type="radio"
+                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="radio"
                             id="titleMiss" name="title" ngModel value="Miss">
                         <label for="titleMiss">Miss</label>
-                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400" type="radio"
+                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="radio"
                             id="titleDr" name="title" ngModel value="Dr.">
                         <label for="titleDr">Dr.</label>
                     </div>
                     <div class="mx-auto my-2">
                         <label class="text-gray-800" for="mobile">Mobile :</label>
-                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400" type="text"
+                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="text"
                             id="mobile" name="mobile" ngModel>
                     </div>
                     <div class="mx-auto my-2">
                         <label class="text-gray-800" for="email">Email :</label>
-                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400" type="email"
+                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="email"
                             id="email" name="email" ngModel>
                     </div>
                     <div class="mx-auto my-auto">
                         <label class="text-gray-800" for="address">Address :</label>
-                        <textarea class="ml-2 border-2 rounded-md border-golden hover:border-amber-400" type="text"
+                        <textarea class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="text"
                             id="address" name="address" ngModel></textarea>
                     </div>
                     <div class="flex flex-row mx-auto my-3">
@@ -52,7 +52,7 @@
                                 ngModel></div>
                             <div><svg *ngIf="viewIcon== true" (click)="showPassword()"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-golden">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -60,7 +60,7 @@
                                 </svg>
                                 <svg *ngIf="viewIcon== false" (click)="showPassword()"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-golden">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
                                 </svg>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="mx-auto my-3">
                         <label class="text-gray-800" for="confirmPassword">Confirm Password :</label>
-                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400" [type]="changetype?'password':'text'"
+                        <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" [type]="changetype?'password':'text'"
                             id="confirmPassword" name="confirmPassword" ngModel>
                     </div>
                     <div class="flex flex-row w-full my-5 h-fit">
