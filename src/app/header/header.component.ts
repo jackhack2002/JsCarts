@@ -54,7 +54,7 @@ export class HeaderComponent {
   }
 
   searchSubmit(val:string){
-    alert("search works !");
+    // alert("search works !");
     // prompt(val);
     this.router.navigate(['/dashboard/search/',`${val}`]);
     this.product.searchProduct(val);
