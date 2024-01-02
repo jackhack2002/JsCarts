@@ -26,6 +26,8 @@ import {AngularFireStorageModule} from '@angular/fire/compat/storage'
 import {AngularFireDatabaseModule} from '@angular/fire/compat/database'
 import { AngularFireModule } from '@angular/fire/compat';
 import { UserInfoService } from './services/user/user-info.service';
+import { SearchComponent } from './search/search.component';
+
 
 
 
@@ -55,7 +57,8 @@ const firebaseConfig = {
     CarouselComponent,
     PagenotfoundComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

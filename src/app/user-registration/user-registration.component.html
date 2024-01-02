@@ -5,7 +5,7 @@
 
             <form  #form="ngForm" (ngSubmit)="register(form)">
                 <div class="flex flex-col items-center justify-center mt-2">
-                    <div class="mx-auto my-2">
+                    <!-- <div class="mx-auto my-2">
                         <label class="text-gray-800" for="firstname">First Name :</label>
                         <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="text"
                             id="firstname" name="firstname" ngModel>
@@ -34,17 +34,17 @@
                         <label class="text-gray-800" for="mobile">Mobile :</label>
                         <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="text"
                             id="mobile" name="mobile" ngModel>
-                    </div>
+                    </div> -->
                     <div class="mx-auto my-2">
                         <label class="text-gray-800" for="email">Email :</label>
                         <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="email"
                             id="email" name="email" ngModel>
                     </div>
-                    <div class="mx-auto my-auto">
+                    <!-- <div class="mx-auto my-auto">
                         <label class="text-gray-800" for="address">Address :</label>
                         <textarea class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" type="text"
                             id="address" name="address" ngModel></textarea>
-                    </div>
+                    </div> -->
                     <div class="flex flex-row mx-auto my-3">
                         <label class="text-gray-800" for="password">Password :</label>
                         <div class="flex flex-row ml-2 border-2 rounded-md border-golden">
@@ -68,14 +68,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mx-auto my-3">
+                    <!-- <div class="mx-auto my-3">
                         <label class="text-gray-800" for="confirmPassword">Confirm Password :</label>
                         <input class="ml-2 border-2 rounded-md border-golden hover:border-amber-400 outline-none" [type]="changetype?'password':'text'"
                             id="confirmPassword" name="confirmPassword" ngModel>
-                    </div>
+                    </div> -->
                     <div class="flex flex-row w-full my-5 h-fit">
                         <div class="w-full ml-4 text-blue-600 basis-9/12"><label class="cursor-pointer"
-                                for="passwordreset" (click)="login()">Already have an account?</label></div>
+                                 (click)="login()">Already have an account?</label></div>
                         <div class="mx-10"><button type="submit" class="px-4 py-2 text-sm font-medium text-center text-white rounded-lg bg-golden focus:ring-amber-300 basis-3/12"
                                 >register</button></div>
                     </div>

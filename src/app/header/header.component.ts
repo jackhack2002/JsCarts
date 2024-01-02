@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserInfoService } from '../services/user/user-info.service';
+import { ProductService } from '../services/products/product.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent {
     isAuthorized: boolean = localStorage.getItem('IsAuthorized') === 'true';
     visible:boolean = true ;
 
-  constructor(private router:Router, private userinfo:UserInfoService){}
+  constructor(private router:Router, private userinfo:UserInfoService,private product: ProductService){}
   
   Login() {
     this.router.navigate(['/login']); 
@@ -50,6 +51,14 @@ export class HeaderComponent {
     localStorage.removeItem('IsAdmin');
       window.location.reload();
       this.router.navigate(['/dashboard/home']);
+  }
+
+  searchSubmit(val:string){
+    alert("search works !");
+    // prompt(val);
+    this.router.navigate(['/dashboard/search/',`${val}`]);
+    this.product.searchProduct(val);
+    // window.location.reload();
   }
 
 }

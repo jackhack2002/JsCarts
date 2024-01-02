@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
 
@@ -15,10 +16,14 @@ const routes: Routes = [
 
   children:[
     {path:'home', component:HomeComponent},
-    {path:'', redirectTo:'home', pathMatch:'full'},
+  
+   {path: 'search/:query',component:SearchComponent},
+  
+  {path:'', redirectTo:'home', pathMatch:'full'},
+  
     {path:'details', component:ProductDetailComponent},
     {path:'profile', component:ProfileComponent},
-    { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) }
+    { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
   ]
 
 },
